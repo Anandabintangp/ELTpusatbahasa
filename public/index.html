@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Halaman backup informasi tes ELT dan TKBI Pusat Bahasa FIB Unpad: jadwal, pendaftaran, pembayaran, panduan ujian, dan sertifikat.">
+<meta name="theme-color" content="#243B91">
+<title>ELT &amp; TKBI Unpad — Halaman Backup</title>
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="preload" href="/assets/plus-jakarta-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css">
+<script src="/app.js" defer></script>
+</head>
+<body>
+<a class="pb-skip-link" href="#ketentuan">Lewati ke panduan ujian</a>
+<main id="mainContent"><section class="pb-elt-hero-section" id="top" data-pb-anchor="elt-page-top">
+  <div class="pb-elt-hero-container">
+    <div class="pb-backup-bar"><div class="pb-brand"><img src="/assets/favicon.svg" width="48" height="48" alt="ELT"><span>Pusat Bahasa<br><b>FIB Unpad</b></span></div><span class="pb-backup-label">Halaman backup</span></div>
+    <div class="pb-elt-title-area">
+      <h1 class="pb-elt-title">Tes <span class="blue">ELT</span> & <span class="pink">TKBI</span> Unpad</h1>
+      <p class="pb-elt-desc">
+        Layanan tes kemampuan bahasa Inggris untuk kebutuhan akademik, SMUP Pascasarjana, IUP,
+        sidang, dan administrasi akademik lainnya. Tes ELT-TKBI meliputi tiga kemampuan berbahasa,
+        yaitu Listening Comprehension, Structure and Written Expression, dan Reading Comprehension.
+      </p>
+      <div class="pb-elt-actions">
+        <a href="https://pusatbahasa.org" class="pb-elt-btn pb-elt-btn-elt">Daftar ELT Daring dan Luring</a>
+        <a href="https://pendaftaran.unpad.ac.id" class="pb-elt-btn pb-elt-btn-tkbi">Daftar TKBI Daring dan Luring</a>
+        <a href="https://pusatbahasa.fib.unpad.ac.id/hubungi-admin/" class="pb-elt-btn pb-elt-btn-admin" id="pbEltAdminBtn"><span class="dot"></span>Hubungi Admin</a>
+      </div>
+    </div>
+
+    <!-- ===== MENU STICKY ===== -->
+    <div class="pb-elt-menu-sentinel" id="pbEltMenuSentinel"></div>
+    <div class="pb-elt-page-menu-wrap" id="pbEltPageMenuWrap">
+      <div class="pb-elt-page-menu-inner">
+        <nav class="pb-elt-page-menu" aria-label="Menu khusus halaman ELT-TKBI">
+          <div class="pb-swipe-hint-overlay" id="pbMenuSwipeOverlay" title="Klik untuk menyembunyikan">
+            <span class="pb-swipe-hint-pill">&larr; Geser ke kanan atau kiri &rarr;</span>
+          </div>
+
+          <button type="button" class="pb-elt-menu-arrow" id="pbMenuArrowLeft" aria-label="Geser ke kiri">&#8249;</button>
+          <div class="pb-elt-page-menu-list-wrap">
+            <ul class="pb-elt-page-menu-list" id="pbEltPageMenuList">
+              <li><a href="#top" data-target="top">Beranda</a></li>
+              <li><a href="#jadwal-kalender-elt-tkbi" data-target="jadwal-kalender-elt-tkbi">Kalender</a></li>
+              <li><a href="#panduan-bayar" data-card="bayar">Biaya &amp; Pembayaran</a></li>
+              <li><a href="#panduan-perangkat" data-card="perangkat">Ketentuan Perangkat</a></li>
+              <li><a href="#panduan-login" data-card="login">Login Ujian</a></li>
+              <li><a href="#panduan-tatatertib" data-card="tatatertib">Tata Tertib Ujian</a></li>
+              <li><a href="#panduan-jadwal" data-card="jadwal">Urutan Ujian</a></li>
+              <li><a href="#panduan-skor" data-card="skor">Rentang Skor Tes</a></li>
+              <li><a href="#sertifikat" data-card="sertifikat">Informasi Sertifikat</a></li>
+              <li><a href="#video" data-target="video">Video Tata Cara Ujian</a></li>
+            </ul>
+          </div>
+          <button type="button" class="pb-elt-menu-arrow" id="pbMenuArrowRight" aria-label="Geser ke kanan">&#8250;</button>
+        </nav>
+      </div>
+    </div>
+    <div id="pbEltMenuPlaceholder" style="display:none;"></div>
+  </div>
+</section>
+
+<!-- Tombol Scroll ke Atas -->
+<button class="pb-scroll-top-btn" id="pbScrollTopBtn" aria-label="Kembali ke atas" title="Ke atas">
+  <svg viewBox="0 0 24 24"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></svg>
+</button>
+
+<!-- Tombol chat mengambang -> menuju halaman /hubungi-admin/ -->
+<a class="pb-chat-fab" href="https://pusatbahasa.fib.unpad.ac.id/hubungi-admin/" id="pbChatFab" aria-label="Hubungi Admin">
+  <svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 015 5v2a5 5 0 01-10 0V7a5 5 0 015-5zm0 12c4.42 0 8 2.24 8 5v1H4v-1c0-2.76 3.58-5 8-5z"/></svg>
+</a>
+
+<!-- Layar transisi sebelum berpindah ke halaman chat admin -->
+
+<section class="pb-schedule-section" id="jadwal-kalender-elt-tkbi" aria-labelledby="scheduleTitle">
+<div class="pb-container"><div class="pb-schedule-heading"><h2 id="scheduleTitle">Kalender &amp; Jadwal Tes</h2><p>Jadwal ELT dan TKBI Pusat Bahasa FIB Unpad.</p></div><!-- Ganti seluruh blok embed jadwal di Elementor dengan kode ini. -->
+
+
+<div id="pbScheduleEmbed">
+  <iframe
+    id="pbScheduleIframe"
+    src="https://script.google.com/macros/s/AKfycbxrkT8XhhOWpx3fRWaA0P9j_4zdhm-9gXNVixCC0VC-l9xadmbh72ffyjyjoMfo12dg6g/exec?v=20260727-9"
+    title="Jadwal Pusat Bahasa"
+    scrolling="no"
+    loading="eager">
+  </iframe>
+  <a id="pbScheduleFullLink"
+     href="https://script.google.com/macros/s/AKfycbxrkT8XhhOWpx3fRWaA0P9j_4zdhm-9gXNVixCC0VC-l9xadmbh72ffyjyjoMfo12dg6g/exec?v=20260727-9"
+     target="_blank" rel="noopener noreferrer" hidden>Buka jadwal lengkap</a>
+</div></div></section>
+<!-- SECTION 03 — PANDUAN RINGKAS UJIAN ELT-TKBI (v4, Informasi Sertifikat disederhanakan
+     langsung ke Layanan Cetak Sertifikat + Maps; modal cetak sertifikat: gambar folder
+     Spam kini wajib diklik dulu untuk membuka kunci tombol "Lanjut"; gambar tetap bisa di-ZOOM) -->
+
+
+<section class="pb-elt-ket-section" id="ketentuan" data-pb-anchor="ketentuan">
+  <div class="pb-elt-ket-wrap">
+
+    <div class="pb-elt-ket-head">
+      <h2>Panduan Ringkas Ujian ELT/TKBI</h2>
+    </div>
+
+    <div class="pb-elt-ket-board">
+        
+<!-- 1. BIAYA & CARA PEMBAYARAN -->
+<div class="pb-elt-ket-card c-amber" data-card-id="bayar" id="panduan-bayar">
+  <div class="pb-elt-ket-inner">
+    <h3>Biaya &amp; Cara Pembayaran</h3>
+
+    <div class="pb-elt-ket-billrow">
+      <span>Biaya tes per peserta (Umum)</span>
+      <span>Rp175.000,00</span>
+    </div>
+
+    <div class="pb-elt-ket-billrow">
+      <span>Khusus Civitas Unpad</span>
+      <span>Rp75.000,00</span>
+    </div>
+
+    <div class="pb-elt-ket-pay-buttons">
+      <button 
+        type="button" 
+        class="pb-elt-btn-pay"
+        onclick="openPaymentPopup('pusatbahasa')">
+        Bayar di pusatbahasa.org
+      </button>
+
+      <button 
+        type="button" 
+        class="pb-elt-btn-pay"
+        onclick="openPaymentPopup('unpad')">
+        Bayar di pendaftaran.unpad.ac.id
+      </button>
+    </div>
+
+    <p class="pb-elt-refund-note">
+      <b>⚠ Perhatian:</b> Setiap pembayaran yang sudah ditransfer <b>tidak dapat direfund/dikembalikan</b> dengan alasan apapun.
+    </p>
+  </div>
+</div>
+
+<!-- POPUP PEMBAYARAN -->
+
+
+
+
+
+      <!-- 2. KETENTUAN PERANGKAT UJIAN -->
+      <div class="pb-elt-ket-card" data-card-id="perangkat" id="panduan-perangkat">
+        <div class="pb-elt-ket-inner">
+          <h3>Ketentuan Perangkat Ujian DARING</h3>
+          <ul>
+            <li>Laptop atau desktop dengan layar monitor minimal <b>13"</b></li>
+            <li>Kamera (eksternal/internal), microphone, dan speaker/headset aktif selama tes</li>
+            <li>Memori (RAM) minimal <b>2 GB</b>, sistem operasi Windows 7/8/10</li>
+            <li>Browser <b>Mozilla Firefox</b> atau <b>Google Chrome</b> versi terbaru</li>
+            <li>Browser <b>Safari TIDAK BISA DIGUNAKAN</b></li>
+
+            <li>Koneksi internet stabil minimal <b>5 Mbps</b></li>
+            <li>Ponsel dan tablet <b>tidak diperbolehkan</b></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 3. LOGIN UJIAN -->
+      <div class="pb-elt-ket-card" data-card-id="login" id="panduan-login">
+        <div class="pb-elt-ket-inner">
+          <h3>Login Ujian</h3>
+          <a class="pb-elt-ket-linkbtn" href="http://ujian.unpad.ac.id" target="_blank" rel="noopener">ujian.unpad.ac.id</a>
+          <ul>
+            <li>Website ujian dibuka hari H pukul <b>09.00 WIB</b></li>
+            <li>Gunakan KTP/SIM/KTM/Paspor saat foto login</li>
+            <li>Wajib login paling lambat <b>30 menit</b> sebelum ujian dimulai</li>
+            <li>Telat dari batas waktu → <b>gagal/gugur</b></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 4. TATA TERTIB UJIAN + AKUN TERLOGOUT/TERBLOKIR (satu kartu) -->
+      <div class="pb-elt-ket-card" data-card-id="tatatertib" id="panduan-tatatertib">
+        <div class="pb-elt-ket-inner">
+          <h3>Tata Tertib Ujian Selama Ujian</h3>
+          <ul>
+            <li>Wajib di ruangan tertutup dan sendiri, kamera aktif</li>
+            <li>Dilarang berkomunikasi atau bekerja sama dengan siapa pun</li>
+            <li>Dilarang membuka aplikasi lain selain aplikasi ujian</li>
+            <li>Dilarang merekam, screenshot, atau menangkap layar soal</li>
+            <li>Dilarang meninggalkan ruangan atau digantikan orang lain</li>
+            <li>Tidak boleh pakai kalkulator, catatan, atau alat komunikasi lain</li>
+          </ul>
+
+          <div class="pb-elt-ket-alert-box">
+            <h4>Akun Terlogout atau Terblokir?</h4>
+            <p class="pb-elt-ket-warn-lead">Melanggar tata tertib di atas dapat membuat akun ujian Anda otomatis logout atau terblokir.</p>
+            <p style="margin:0;font-size:13px;line-height:1.6;">
+              Jika ini terjadi, segera hubungi <b>Helpdesk ujian</b>. Nomor Helpdesk tertera di laman ujian.
+              Ujian tidak dapat dilanjutkan tanpa persetujuan pengawas atau helpdesk.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- URUTAN UJIAN -->
+      <div class="pb-elt-ket-card" data-card-id="jadwal" id="panduan-jadwal">
+        <div class="pb-elt-ket-inner">
+          <h3>Urutan Ujian</h3>
+
+          <div class="pb-elt-ket-session-row"><span>Latihan ujian</span><span class="t">Hari-H UJIAN (09.00–12.30)</span></div>
+          <div class="pb-elt-ket-session-row"><span>Peserta memasuki platform ujian</span><span class="t">12.30–12.45</span></div>
+          <div class="pb-elt-ket-session-row"><span>Verifikasi peserta ujian</span><span class="t">12.45–13.00</span></div>
+          <div class="pb-elt-ket-session-row"><span>Listening Comprehension (50 soal)</span><span class="t">13.00–13.35</span></div>
+          <div class="pb-elt-ket-session-row"><span>Structure &amp; Written Expression (40 soal)</span><span class="t">13.35–14.00</span></div>
+          <div class="pb-elt-ket-session-row"><span>Reading Comprehension (50 soal)</span><span class="t">14.00–14.55</span></div>
+          <div class="pb-elt-ket-divider"></div>
+          <ul>
+            <li>Token &amp; sistem berjalan otomatis sesuai jadwal sesi</li>
+            <li>Soal belum dijawab ditandai merah, sudah dijawab ditandai hijau</li>
+            <li>Aplikasi berhenti otomatis saat waktu habis</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SKOR TES -->
+      <div class="pb-elt-ket-card c-green" data-card-id="skor" id="panduan-skor">
+        <div class="pb-elt-ket-inner">
+          <h3>Rentang Skor Tes</h3>
+          <div class="pb-elt-ket-score-row"><span class="lbl">Skor terendah</span><span class="val">310</span></div>
+          <div class="pb-elt-ket-score-row"><span class="lbl">Skor tertinggi</span><span class="val">677</span></div>
+          <p style="margin:0;font-size:12.5px;line-height:1.6;color:#374151;">
+            Tes menggunakan standar TOEFL ITP dan mengujikan Listening Comprehension, Structure and
+            Written Expression, dan Reading Comprehension.
+          </p>
+        </div>
+      </div>
+
+      <!-- INFORMASI SERTIFIKAT — poin 1-2-3 + Layanan Cetak Sertifikat, semua di satu kartu -->
+      <div class="pb-elt-ket-card c-green" data-card-id="sertifikat" id="sertifikat">
+        <div class="pb-elt-ket-inner">
+          <h3>Informasi Sertifikat</h3>
+          <ul>
+            <li>Sertifikat digital keluar <b>2–3 hari</b> setelah tes selesai, dikirim ke email peserta.</li>
+            <li>Pastikan alamat email saat mendaftar sudah <b>benar dan aktif</b> agar sertifikat diterima.</li>
+            <li>Waktu pengiriman dapat <b>lebih cepat/lambat</b> menyesuaikan jadwal masing-masing.</li>
+          </ul>
+
+          <div class="pb-elt-ket-divider"></div>
+
+          <h3 style="margin-top:0;">Layanan Cetak Sertifikat</h3>
+          <p style="margin:0 0 12px;font-size:12.5px;line-height:1.6;color:#374151;">
+            Sebelum menghubungi staf kami, mohon pastikan terlebih dahulu beberapa hal berikut agar proses lebih cepat.
+          </p>
+
+          <div class="pb-elt-ket-actions" style="margin-top:0;">
+            <button type="button" class="pb-elt-cert-btn" onclick="eltOpenModal()" style="flex:1 1 auto;">Hubungi via WhatsApp</button>
+          </div>
+
+          <div class="pb-elt-cert-address">
+            <strong>Pengambilan sertifikat cetak:</strong><br>
+            Pusat Bahasa FIB Unpad, Bale Motekar<br>
+            Jalan Banda No. 40, Kota Bandung
+            <br><br>
+            Sertifikat cetak juga dapat dikirim ke alamat peserta dengan ketentuan seluruh biaya pengiriman
+            ditanggung oleh pemohon/peserta.
+          </div>
+
+          <a class="pb-elt-map-route-btn" id="eltRouteBtn" href="https://www.google.com/maps/dir/?api=1&destination=Bale+Motekar+Jalan+Banda+No.40+Bandung" target="_blank" rel="noopener noreferrer" style="margin-top:10px;">
+            📍 Buka Rute ke Bale Motekar
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Modal Konfirmasi 3 Langkah — Cetak Sertifikat
+     1) Cek Email  2) Cek Folder Spam (gambar wajib diklik dulu agar tombol Lanjut aktif)  3) Kontak WA -->
+
+
+<!-- Lightbox zoom untuk gambar contoh folder Spam -->
+
+<section class="pb-section" id="video" data-pb-anchor="video-panduan">
+  <div class="pb-container">
+    <div class="pb-section-title-row">
+      <h2 class="pb-section-title">Video Tata Cara Ujian ELT&#8209;TKBI</h2>
+      <p class="pb-section-subtitle">Silakan tonton video panduan berikut untuk memahami tata cara latihan ujian dan pelaksanaan ujian ELT-TKBI.</p>
+    </div>
+    <div class="pb-video-layout">
+      <div class="pb-video-card">
+        <div class="pb-video-frame">
+          <iframe class="pb-video-player" src="https://www.youtube.com/embed/ckSzQ6b3P0Q?si=c0S7XR-2S-GkUiyF" title="Panduan latihan dan pelaksanaan ujian ELT-TKBI" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="pb-video-info">
+          <h3>Panduan Latihan &amp; Pelaksanaan Ujian</h3>
+          <p>Video ini menunjukkan langkah demi langkah mulai dari login, latihan ujian, hingga pelaksanaan tes ELT-TKBI secara daring.</p>
+        </div>
+      </div>
+      <div class="pb-video-side">
+        <div class="pb-video-summary">
+          <span class="pb-video-summary-tag">Ringkasan Video</span>
+          <ol>
+            <li>Peserta membuka <b>ujian.unpad.ac.id</b> dan memfoto diri dengan kartu identitas (KTP/SIM/KTM/Paspor) untuk proses login.</li>
+            <li>Masukkan <b>Nomor Peserta</b> dan <b>PIN</b> (tanggal lahir, format ddmmyyyy) untuk masuk ke platform ujian.</li>
+            <li><b>Latihan ujian bersifat wajib</b> dan dilakukan sebelum sesi utama untuk memastikan perangkat serta koneksi internet berjalan lancar.</li>
+            <li>Peserta wajib login paling lambat <b>30 menit</b> sebelum jadwal ujian dimulai.</li>
+            <li>Selama ujian, kamera harus tetap menyala dan peserta dilarang membuka aplikasi lain.</li>
+            <li>Jika mengalami kendala teknis, peserta dapat menghubungi <b>helpdesk</b> yang nomornya tertera di laman ujian.</li>
+          </ol>
+        </div>
+        <div class="pb-video-note">
+          <strong>Kendala teknis</strong>
+          <span>Helpdesk ujian tersedia pada laman muka platform ujian bagian bawah.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="pb-site-footer"><div class="pb-container"><p><strong>Pusat Bahasa FIB Unpad</strong><br>Halaman backup informasi ELT &amp; TKBI.</p><a href="https://pusatbahasa.fib.unpad.ac.id/">Website utama Pusat Bahasa</a></div></footer></main>
+<div class="pb-elt-popup-overlay" id="paymentPopup" role="dialog" aria-modal="true" aria-label="Pembayaran tes" aria-hidden="true">
+  <div class="pb-elt-popup-box">
+    <button type="button" class="pb-elt-popup-close" onclick="closePaymentPopup()">
+      &times;
+    </button>
+
+    <h3 id="popupTitle">Informasi Pembayaran</h3>
+
+    <div id="popupContent"></div>
+
+    <a href="#" target="_blank" class="pb-elt-btn-daftar" id="popupDaftarBtn">
+      Daftar Sekarang
+    </a>
+  </div>
+</div>
+<div class="elt-modal-overlay" id="eltModalOverlay" role="dialog" aria-modal="true" aria-label="Layanan cetak sertifikat" aria-hidden="true">
+  <div class="elt-modal-box">
+    <div class="elt-modal-steps">
+      <div class="elt-modal-step-dot" id="eltStepDot1"></div>
+      <div class="elt-modal-step-dot" id="eltStepDot2"></div>
+      <div class="elt-modal-step-dot" id="eltStepDot3"></div>
+    </div>
+
+    <!-- Langkah 1: Cek Email -->
+    <div class="elt-modal-panel active" id="eltPanel1">
+      <h3>Langkah 1 dari 3 — Cek Email</h3>
+      <p class="elt-modal-desc">Sebelum lanjut, mohon pastikan hal berikut sudah benar.</p>
+
+      <div class="elt-modal-checklist">
+        <label>
+          <input type="checkbox" id="eltCheckEmail" onchange="eltUpdateStep1()">
+          Saya sudah memastikan alamat email yang didaftarkan sudah benar dan aktif.
+        </label>
+      </div>
+
+      <span class="elt-modal-hint" id="eltHint1">Centang kotak di atas untuk melanjutkan ke langkah berikutnya.</span>
+
+      <div class="elt-modal-nav">
+        <button type="button" class="elt-modal-btn-next" id="eltNextBtn1" onclick="eltGoToStep(2)" disabled>Lanjut</button>
+      </div>
+      <button type="button" class="elt-modal-close" onclick="eltCloseModal()">Tutup</button>
+    </div>
+
+    <!-- Langkah 2: Cek Folder Spam (gambar wajib diklik dulu agar tombol Lanjut aktif) -->
+    <div class="elt-modal-panel" id="eltPanel2">
+      <h3>Langkah 2 dari 3 — Cek Folder Spam</h3>
+      <p class="elt-modal-desc">Sertifikat kadang masuk ke folder Spam/Junk, bukan Kotak Masuk utama. Klik gambar contoh folder Spam terlebih dahulu untuk mengaktifkan tombol Lanjut.</p>
+
+      <div class="elt-spam-help">
+        <b>Cara cek folder Spam:</b><br>
+        Buka email Anda → lihat menu di sisi kiri (di Gmail biasanya di bawah menu "Lainnya"/"More") →
+        klik folder <b>Spam</b> atau <b>Sampah</b> → cari email dari Pusat Bahasa FIB Unpad.
+
+        <div class="elt-spam-help-shot" id="eltSpamShot" role="button" tabindex="0" aria-label="Klik untuk memperbesar gambar">
+          <img src="/assets/spam-email.svg" alt="Contoh lokasi folder Spam di email">
+          <div class="cap">🔍 Klik gambar Spam untuk melanjutkan</div>
+        </div>
+      </div>
+
+      <div class="elt-spam-confirm" id="eltSpamConfirm">
+        Klik gambar folder Spam di atas untuk melanjutkan menghubungi kontak layanan cetak sertifikat.
+      </div>
+
+      <div class="elt-modal-nav">
+        <button type="button" class="elt-modal-btn-back" onclick="eltGoToStep(1)">Kembali</button>
+        <button type="button" class="elt-modal-btn-next" id="eltNextBtn2" onclick="eltGoToStep(3)" disabled>Lanjut</button>
+      </div>
+      <button type="button" class="elt-modal-close" onclick="eltCloseModal()">Tutup</button>
+    </div>
+
+    <!-- Langkah 3: Kontak WhatsApp -->
+    <div class="elt-modal-panel" id="eltPanel3">
+      <h3>Langkah 3 dari 3 — Hubungi Staf Kami</h3>
+      <p class="elt-modal-desc">Silakan hubungi salah satu staf kami untuk layanan cetak sertifikat.</p>
+
+      <div class="elt-modal-contacts">
+        <p>Pilih kontak WhatsApp:</p>
+        <a class="elt-modal-contact-btn" href="https://wa.me/62895344474369" target="_blank" rel="noopener noreferrer">Bapak Budi Purnama <span>&rarr;</span></a>
+        <a class="elt-modal-contact-btn" href="https://wa.me/6282117586750" target="_blank" rel="noopener noreferrer">Bapak Asep <span>&rarr;</span></a>
+      </div>
+
+      <div class="elt-modal-nav">
+        <button type="button" class="elt-modal-btn-back" onclick="eltGoToStep(2)">Kembali</button>
+      </div>
+      <button type="button" class="elt-modal-close" onclick="eltCloseModal()">Tutup</button>
+    </div>
+  </div>
+</div>
+<div class="elt-zoom-overlay" id="eltZoomOverlay" role="dialog" aria-modal="true" aria-label="Contoh folder Spam" aria-hidden="true">
+  <button type="button" class="elt-zoom-close" id="eltZoomClose" aria-label="Tutup">&times;</button>
+  <img id="eltZoomImg" alt="Perbesar contoh folder Spam">
+</div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!--
+TAMBAHAN UNTUK HTML JADWAL DI GOOGLE APPS SCRIPT, BUKAN UNTUK ELEMENTOR.
+Pakai hanya jika pengirim PB_ELT_HEIGHT belum ada atau pengukuran tingginya masih salah.
+
+1. Di HTML Apps Script, bungkus seluruh konten jadwal yang sudah ada dengan:
+
+   <div id="pbScheduleContent">
+     ...seluruh konten jadwal yang sudah ada, dari judul sampai informasi terakhir...
+   </div>
+
+   Jangan menghapus isi jadwal. Jangan menambahkan tulisan placeholder di atas.
+   Konten di dalam pembungkus harus memakai tinggi otomatis. Jika ada height,
+   min-height:100vh, max-height, atau overflow-y:auto pada kartu/pembungkus
+   jadwal, sesuaikan aturan tersebut agar konten bisa mengalir secara alami.
+   Popup atau tombol dengan position:fixed dapat tetap di luar pembungkus.
+
+2. Tambahkan STYLE di bawah ke HTML Apps Script.
+3. Hapus/ganti script pengirim PB_ELT_HEIGHT yang lama agar hanya ada satu pengirim.
+4. Tambahkan SCRIPT di bawah sebelum </body>.
+5. Simpan dan perbarui deployment yang dipakai iframe ke versi baru.
+
+File ini tambahan untuk HTML jadwal Anda, bukan pengganti seluruh aplikasinya.
+-->
+
+<style>
+  html, body {
+    box-sizing:border-box !important;
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+    margin:0 !important;
+    padding:0 !important;
+    overflow-x:hidden !important;
+    overflow-y:hidden !important;
+  }
+  #pbScheduleContent {
+    display:flow-root !important;
+    box-sizing:border-box !important;
+    width:100% !important;
+    max-width:100% !important;
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+    margin:0 !important;
+    overflow:visible !important;
+  }
+</style>
+
+<script>
+(function () {
+  "use strict";
+
+  function init() {
+    const root = document.getElementById("pbScheduleContent");
+    if (!root || root.dataset.pbHeightReporter === "ready") return;
+    root.dataset.pbHeightReporter = "ready";
+
+    let lastHeight = 0;
+    let scheduled = false;
+    let forceNext = false;
+
+    function sendHeight(force) {
+      const height = Math.ceil(Math.max(
+        root.getBoundingClientRect().height,
+        root.scrollHeight,
+        root.offsetHeight
+      ));
+      if (height <= 0 || (!force && height === lastHeight)) return;
+      lastHeight = height;
+
+      const message = { type:"PB_ELT_HEIGHT", height:height };
+      // Kirim ke tiap leluhur: pembungkus Google, halaman WordPress, dan editor bila ada.
+      let target = window.parent;
+      for (let depth = 0; depth < 10 && target && target !== window; depth++) {
+        target.postMessage(message, "*");
+        if (target === target.parent) break;
+        target = target.parent;
+      }
+    }
+
+    function queueHeight(force) {
+      forceNext = forceNext || force === true;
+      if (scheduled) return;
+      scheduled = true;
+      requestAnimationFrame(function () {
+        scheduled = false;
+        const shouldForce = forceNext;
+        forceNext = false;
+        sendHeight(shouldForce);
+      });
+    }
+
+    window.addEventListener("message", function (event) {
+      if (event.data && event.data.type === "PB_ELT_REQUEST_HEIGHT") queueHeight(true);
+    });
+    window.addEventListener("resize", function () { queueHeight(false); }, { passive:true });
+    window.addEventListener("load", function () { queueHeight(true); });
+    root.addEventListener("load", function () { queueHeight(false); }, true);
+
+    if (typeof ResizeObserver !== "undefined") {
+      new ResizeObserver(function () { queueHeight(false); }).observe(root);
+    }
+    new MutationObserver(function () { queueHeight(false); }).observe(root, {
+      childList:true, subtree:true, characterData:true, attributes:true
+    });
+
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(function () { queueHeight(true); });
+    }
+    [0, 250, 800, 1800, 4000].forEach(function (delay) {
+      setTimeout(function () { queueHeight(true); }, delay);
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init, { once:true });
+  } else { init(); }
+})();
+</script>

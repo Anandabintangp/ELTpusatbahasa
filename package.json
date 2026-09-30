@@ -1,0 +1,12 @@
+{
+  "name": "elt-backup-vercel",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Halaman backup ELT-TKBI Pusat Bahasa FIB Unpad",
+  "scripts": {
+    "dev": "node scripts/server.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/server.mjs dist",
+    "deploy": "npx vercel --prod"
+  }
+}
