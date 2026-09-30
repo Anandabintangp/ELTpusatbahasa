@@ -161,7 +161,7 @@
     box-shadow:0 0 0 3px #5b7fff, 0 20px 40px rgba(36,59,145,.22)!important;
   }
 
-  /* ===== TOMBOL CHAT MENGAMBANG (mengarah ke halaman /hubungi-admin/) ===== */
+  /* ===== TOMBOL CHAT MENGAMBANG ===== */
   .pb-chat-fab{
     position:fixed;bottom:20px;right:20px;width:56px;height:56px;border-radius:50%;
     background:#25D366;border:none;cursor:pointer;box-shadow:0 14px 30px rgba(37,211,102,.35);
@@ -649,9 +649,8 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visibl
 .pb-elt-hero-section,.pb-elt-ket-section{width:100% !important;max-width:100% !important;margin-left:0 !important;margin-right:0 !important}
 .pb-elt-hero-container,.pb-elt-ket-wrap,.pb-container{width:min(1180px,calc(100% - 40px)) !important;margin-left:auto !important;margin-right:auto !important}
 .pb-backup-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:36px}
-.pb-brand{display:flex;align-items:center;gap:12px;font-size:14px;line-height:1.35;color:#475569}
-.pb-brand img{width:48px;height:48px;object-fit:contain;border-radius:12px}
-.pb-brand b{font-size:16px;color:#1a1a2e}
+.pb-brand{display:flex;flex-direction:column;align-items:flex-start;gap:3px;font-size:11px;font-weight:700;line-height:1.35;color:#475569}
+.pb-brand img{display:block;width:144px;height:auto;object-fit:contain}
 .pb-backup-label{border:1px solid #d9e0f6;background:#f3f6ff;color:#243b91;padding:6px 12px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap}
 .pb-elt-title{white-space:normal;max-width:100%;font-weight:800}
 .pb-elt-desc{font-size:16px}
@@ -689,7 +688,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visibl
 [id^='panduan-'],#sertifikat,#ketentuan,#video{scroll-margin-top:110px}
 @media(max-width:760px){
  .pb-elt-hero-container,.pb-elt-ket-wrap,.pb-container{width:calc(100% - 24px) !important}
- .pb-backup-bar{margin-bottom:28px;gap:10px}.pb-brand{gap:8px;font-size:12px}.pb-brand b{font-size:14px}.pb-backup-label{font-size:11px;padding:5px 8px}
+ .pb-backup-bar{margin-bottom:28px;gap:10px}.pb-brand img{width:126px}.pb-backup-label{font-size:11px;padding:5px 8px}
  .pb-elt-desc{font-size:15px}.pb-elt-title{font-size:clamp(32px,9vw,46px);letter-spacing:-1px;line-height:1.12}
  .pb-elt-menu-arrow{width:40px;height:40px}.pb-elt-page-menu a{min-height:40px;font-size:12px}
  .pb-elt-page-menu-wrap.is-stuck .pb-elt-page-menu-inner{padding:8px 12px 10px}

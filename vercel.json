@@ -20,6 +20,14 @@
   ],
   "rewrites": [
     {
+      "source": "/hubungi-admin",
+      "destination": "/hubungi-admin/index.html"
+    },
+    {
+      "source": "/hubungi-admin/",
+      "destination": "/hubungi-admin/index.html"
+    },
+    {
       "source": "/",
       "destination": "/index.html"
     }

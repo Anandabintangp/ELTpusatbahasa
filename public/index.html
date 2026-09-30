@@ -6,7 +6,8 @@
 <meta name="description" content="Halaman backup informasi tes ELT dan TKBI Pusat Bahasa FIB Unpad: jadwal, pendaftaran, pembayaran, panduan ujian, dan sertifikat.">
 <meta name="theme-color" content="#243B91">
 <title>ELT &amp; TKBI Unpad — Halaman Backup</title>
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/pusat-bahasa-icon.png">
+<link rel="apple-touch-icon" href="/assets/pusat-bahasa-icon.png">
 <link rel="preload" href="/assets/plus-jakarta-sans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css">
 <script src="/app.js" defer></script>
@@ -15,7 +16,7 @@
 <a class="pb-skip-link" href="#ketentuan">Lewati ke panduan ujian</a>
 <main id="mainContent"><section class="pb-elt-hero-section" id="top" data-pb-anchor="elt-page-top">
   <div class="pb-elt-hero-container">
-    <div class="pb-backup-bar"><div class="pb-brand"><img src="/assets/favicon.svg" width="48" height="48" alt="ELT"><span>Pusat Bahasa<br><b>FIB Unpad</b></span></div><span class="pb-backup-label">Halaman backup</span></div>
+    <div class="pb-backup-bar"><div class="pb-brand"><img src="/assets/pusat-bahasa-logo.png" width="234" height="100" alt="Pusat Bahasa"><span>FIB Unpad</span></div><span class="pb-backup-label">Halaman backup</span></div>
     <div class="pb-elt-title-area">
       <h1 class="pb-elt-title">Tes <span class="blue">ELT</span> & <span class="pink">TKBI</span> Unpad</h1>
       <p class="pb-elt-desc">
@@ -26,7 +27,7 @@
       <div class="pb-elt-actions">
         <a href="https://pusatbahasa.org" class="pb-elt-btn pb-elt-btn-elt">Daftar ELT Daring dan Luring</a>
         <a href="https://pendaftaran.unpad.ac.id" class="pb-elt-btn pb-elt-btn-tkbi">Daftar TKBI Daring dan Luring</a>
-        <a href="https://pusatbahasa.fib.unpad.ac.id/hubungi-admin/" class="pb-elt-btn pb-elt-btn-admin" id="pbEltAdminBtn"><span class="dot"></span>Hubungi Admin</a>
+        <a href="/hubungi-admin/" class="pb-elt-btn pb-elt-btn-admin" id="pbEltAdminBtn"><span class="dot"></span>Hubungi Admin</a>
       </div>
     </div>
 
@@ -67,12 +68,10 @@
   <svg viewBox="0 0 24 24"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></svg>
 </button>
 
-<!-- Tombol chat mengambang -> menuju halaman /hubungi-admin/ -->
-<a class="pb-chat-fab" href="https://pusatbahasa.fib.unpad.ac.id/hubungi-admin/" id="pbChatFab" aria-label="Hubungi Admin">
+<!-- Tombol chat mengambang menuju layanan admin berbasis Apps Script -->
+<a class="pb-chat-fab" href="/hubungi-admin/" id="pbChatFab" aria-label="Hubungi Admin">
   <svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 015 5v2a5 5 0 01-10 0V7a5 5 0 015-5zm0 12c4.42 0 8 2.24 8 5v1H4v-1c0-2.76 3.58-5 8-5z"/></svg>
 </a>
-
-<!-- Layar transisi sebelum berpindah ke halaman chat admin -->
 
 <section class="pb-schedule-section" id="jadwal-kalender-elt-tkbi" aria-labelledby="scheduleTitle">
 <div class="pb-container"><div class="pb-schedule-heading"><h2 id="scheduleTitle">Kalender &amp; Jadwal Tes</h2><p>Jadwal ELT dan TKBI Pusat Bahasa FIB Unpad.</p></div><!-- Ganti seluruh blok embed jadwal di Elementor dengan kode ini. -->

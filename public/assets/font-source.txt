@@ -1,3 +1,7 @@
 Plus Jakarta Sans — Google Fonts
 https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400..800&display=swap
 https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yw.woff2
+
+Inter: https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap
+Chat wallpaper supplied by user HTML: https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png
+Logos: PNGs supplied by Pusat Bahasa.
